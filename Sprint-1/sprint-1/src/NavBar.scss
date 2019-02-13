@@ -1,0 +1,44 @@
+@import 'variables.scss';
+
+nav {
+    margin: 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav__svg {
+    height: 48px;
+    width: 288px;
+    text-align: center;
+}
+
+.nav__logo {
+    padding-top: 12px;
+}
+
+.nav__search {
+    border: solid 1px $fontshadow;
+    width: 268px;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: $gallerybackground;
+}
+
+.nav__button {
+    width: 233px;
+    margin-bottom: 16px;
+    padding: 10px;
+    color: white;
+    background-color: $lightblue;
+    border-radius: 4px;
+}
+
+.nav__img--profile {
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: left;
+    margin-left: 16px;
+}

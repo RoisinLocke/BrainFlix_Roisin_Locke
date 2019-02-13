@@ -1,0 +1,36 @@
+@import 'variables.scss';
+
+.videoAside{
+    margin: 0 16px;
+}
+
+h4 {
+    color: $darkgrey;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.videoCard {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.videoCard__img{
+    height: 70px;
+    width: 120px;
+    border-radius: 4px;
+}
+
+.videoCard__details{
+    width: 58%;
+}
+
+.videoCard__title {
+    margin: 3px 0 8px 16px;
+    font-weight: bold;
+}
+
+.videoCard__channel {
+    margin: 8px 0 5px 16px;
+}
