@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import videoData from './VideoCardData';
 
 class VideoCard extends Component {
     render() {
         return(
             <div className="videoCard">
-                <img className="videoCard__img" src="Assets/Images/video-list-0.jpg"></img>
+                <img className="videoCard__img" src={this.props.image} />
                 <div className="videoCard__details">
-                    <p className="videoCard__title">Become A Travel Pro In One Step</p>
-                    <p className="videoCard__channel">Todd Welch</p>
+                    <p className="videoCard__title">{this.props.title}</p>
+                    <p className="videoCard__channel">{this.props.channel}</p>
                 </div>
             </div>
         )

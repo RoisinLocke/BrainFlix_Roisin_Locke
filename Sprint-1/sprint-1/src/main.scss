@@ -14,6 +14,10 @@
     flex-wrap: wrap;
     align-items: flex-start;
 }
+.video__play, .video__progress {
+    background-color: black;
+}
+
 
 .main__title {
     width: 100%;

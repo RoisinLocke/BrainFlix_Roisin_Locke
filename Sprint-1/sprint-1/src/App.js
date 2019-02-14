@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import './App.scss';
-import comments from './CommentData';
+import mainObject from './ObjectData';
 import NavBar from './NavBar';
 import Main from './Main';
-import Aside from './Aside'
+import Aside from './Aside';
+import videoCard from './VideoCard';
+import videoData from './VideoCardData';
 
 class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      videos: videoData,
+      // main: mainObject
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <NavBar />
         <Main />
-        <Aside />
+        {/* <Main main={this.state.main}/> */}
+        <Aside videos={this.state.videos}/>
       </div>
     );
   }
