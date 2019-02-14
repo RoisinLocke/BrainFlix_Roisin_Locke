@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+
 
 const mainObject = {
         id: '1af0jruup5gu',

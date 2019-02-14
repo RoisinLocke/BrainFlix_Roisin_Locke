@@ -13,16 +13,18 @@ class App extends Component {
 
     this.state = {
       videos: videoData,
-      main: mainObject
+      mainObject: mainObject
     }
   }
 
   render() {
+    console.log('state',this.state.mainObject);
     return (
       <div className="App">
         <NavBar />
-        <Main main={this.state.main}/>
+        <Main mainObject={this.state.mainObject}/>
         <Aside videos={this.state.videos}/>
+        {console.log(this.state.mainObject)}
       </div>
     );
   }

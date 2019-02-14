@@ -11,7 +11,7 @@ class Aside extends Component {
         videoJSX.push(<VideoCard title ={videos[i].title}
                     channel={videos[i].channel}
                     image={videos[i].image} 
-                    key={videos[i.id]}
+                    key={videos[i].id}
                     />);
         }
 
