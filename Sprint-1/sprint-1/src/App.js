@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = {
       videos: videoData,
-      // main: mainObject
+      main: mainObject
     }
   }
 
@@ -21,8 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Main />
-        {/* <Main main={this.state.main}/> */}
+        <Main main={this.state.main}/>
         <Aside videos={this.state.videos}/>
       </div>
     );

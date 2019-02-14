@@ -14,8 +14,52 @@
     flex-wrap: wrap;
     align-items: flex-start;
 }
-.video__play, .video__progress {
+
+.video{
+    margin: 0;
+    height: 183px;
+}
+
+.video__controls {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 16px;
+    position: relative;
+    bottom: 48px; 
+}
+
+.video__play, .video__progressContainer, .video__vol {
     background-color: black;
+    opacity: 0.5;
+    border-radius: 4px;
+}
+
+.video__play {
+    width: 52px;
+    padding-top: 4px;
+    padding-left: 10px;
+    border: none;
+}
+
+.video__progressContainer  {
+    width: 134px;
+    margin: 0 8px;
+}
+
+.video__progress {
+    width:127px;
+}
+
+.video__progressbar {
+    height: 4px;
+    color: white;
+}
+
+
+.video__vol{
+    width: 74px;
+    padding-top: 4px;
+    padding-left: 12px;
 }
 
 

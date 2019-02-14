@@ -14,21 +14,34 @@ import mainObject from './ObjectData';
 //that should trigger them
 
 class Video extends Component {
+
+    clickHandler = () => {
+        console.log("You clicked!!")
+    //     if ( button === "video__play") {
+    //         if (this.paused || this.ended) {
+    //             this.setAttribute('data-state', 'play');
+    //         }
+    //         else {
+    //             this.setAttribute('data-state', 'pause');
+    //         }
+    //     }
+    }
+
     render() {
         return (
-            <figure>
+            <figure className="video">
                 <video poster="Assets/Images/video-list-0.jpg" className="main__video" src="Assets/Video/BrainStation Sample Video.mp4" type="mp4">
                 </video>
                 <div className="video__controls">
-                    <button className="video__play" type="button" data-state="play"><img src="Assets/Icons/PNG/Icon-play.png"/></button>
-                    <div>
+                    <button className="video__play" type="button" data-state="play" onClick={this.clickHandler}><img src="Assets/Icons/PNG/Icon-play.png"/></button>
+                    <div className="video__progressContainer">
                         <progress className="video__progress" value="0" min="0">
-                            <span className="video__progressbar"></span>
-                            </progress>
+                            <span className="video__progressBar"></span>
+                        </progress>
                     </div>
-                    <div>
-                        <button className="video__fullscreen" type="button" data-state="go-fullscreen">Fullscreen</button>
-                        <button className="video__volume" type="button" data-state="vol">Vol</button>
+                    <div className="video__vol">
+                        <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"/></button>
+                        <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg"/></button>
                     </div>
                 </div>
             </figure>
