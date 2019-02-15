@@ -17,25 +17,15 @@ class App extends Component {
   // constructor() {
   //   super()
 
-    
-
   addComment = (e) => {
-    
-    // const copy = Array.from(this.state.mainObject.comments);
-    // // copy.push({comment: e.target.addComment.value})
-
     const newObject = { ...this.state.mainObject, 
-      comments: [...this.state.mainObject.comments, {comment: e.target.addComment.value} ]};
+      comments: [...this.state.mainObject.comments, {name: "Paulo Ribeiro", timestamp: Date.now(), comment: e.target.addComment.value} ]};
 
     this.setState({
       mainObject: newObject
     })
-
-   
     console.log(newObject);
     e.preventDefault();
-
-    
   }
 
   render() {
@@ -44,19 +34,9 @@ class App extends Component {
         <NavBar />
         <Main submit={this.addComment} mainObject={this.state.mainObject}/>
         <Aside videos={this.state.videos}/>
-        {/* {console.log(this.state.mainObject)} */}
       </div>
     );
   }
 }
 
 export default App;
-
-
-
-
-
-
-
-// const newArray = Array.from(this.state.mainObject.comments);
-//     newArray.push({comment: e.target.addComment.value})
