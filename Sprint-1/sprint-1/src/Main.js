@@ -65,8 +65,11 @@ class Description extends Component {
 }
 
 class Comments extends Component {
+
     render() {
-        
+
+        const newComment = this.props.submit;
+
         const comments = this.props.mainObject.comments;
         let commentsJSX = [];
         for(let i = 0; i < comments.length; i++) {
@@ -85,10 +88,10 @@ class Comments extends Component {
                     <img className="comments__img" src="./Assets/Images/Mohan-muruge.jpg" alt="Profile Image" />
                 </div>
                 <div className="comments__section">
-                    <form id="comment__form">
+                    <form onSubmit={newComment} id="comment__form" >
                         <p className="comment__p">JOIN THE CONVERSATION</p>
-                        <textarea className="comment__box" type="text" name="commentArea" id="commentInput" placeholder="Add your comment..." required></textarea>
-                        <input type="submit" id="commentButton" value="COMMENT"/>
+                        <textarea className="comment__box" type="text" name="addComment" id="commentInput" placeholder="Add your comment..."></textarea>
+                        <input type="submit" id="commentButton" value="COMMENT" />
                     </form>
                 </div>
                 </div>
@@ -106,7 +109,7 @@ class Main extends Component {
             <>
                 <Video />
                 <Description mainObject={this.props.mainObject}/>
-                <Comments mainObject={this.props.mainObject}/> 
+                <Comments submit= {this.props.submit} mainObject={this.props.mainObject}/> 
             </>
         )
     }

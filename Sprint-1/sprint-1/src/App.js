@@ -8,26 +8,55 @@ import videoCard from './VideoCard';
 import videoData from './VideoCardData';
 
 class App extends Component {
-  constructor() {
-    super()
 
-    this.state = {
-      videos: videoData,
-      mainObject: mainObject
-    }
+  state = {
+    videos: videoData,
+    mainObject: mainObject
+  }
+
+  // constructor() {
+  //   super()
+
+    
+
+  addComment = (e) => {
+    
+    // const copy = Array.from(this.state.mainObject.comments);
+    // // copy.push({comment: e.target.addComment.value})
+
+    const newObject = { ...this.state.mainObject, 
+      comments: [...this.state.mainObject.comments, {comment: e.target.addComment.value} ]};
+
+    this.setState({
+      mainObject: newObject
+    })
+
+   
+    console.log(newObject);
+    e.preventDefault();
+
+    
   }
 
   render() {
-    console.log('state',this.state.mainObject);
     return (
       <div className="App">
         <NavBar />
-        <Main mainObject={this.state.mainObject}/>
+        <Main submit={this.addComment} mainObject={this.state.mainObject}/>
         <Aside videos={this.state.videos}/>
-        {console.log(this.state.mainObject)}
+        {/* {console.log(this.state.mainObject)} */}
       </div>
     );
   }
 }
 
 export default App;
+
+
+
+
+
+
+
+// const newArray = Array.from(this.state.mainObject.comments);
+//     newArray.push({comment: e.target.addComment.value})
