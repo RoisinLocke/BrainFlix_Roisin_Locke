@@ -380,3 +380,57 @@
      margin-bottom: 0;
      padding-bottom: 24px;
  }
+
+ .button__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete__container {
+   margin: 5px 20px;
+}
+
+.delete__button {
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   color: $fontsecondary;
+   font-weight: 900;
+   background-color: $darkgrey;
+}
+
+.delete__button:active {
+    background-color: $darkblue;
+}
+
+.delete__button:hover {
+   background-color: $darkblue;
+}
+
+.like__container {
+   height: 30px;
+   margin: 5px 20px;
+   padding-right: 4px;
+}
+
+.like__button {
+   height: 30px;
+   width: 30px;
+   margin-left: 5px;
+   border-radius: 50%;
+   background-color: $gallerybackground;
+}
+
+.like__button:hover {
+   background-color: $lightblue;
+}
+
+.like__button:active {
+   background-color: $darkblue;
+}
+
+.like__thumb {
+   height: 15px;
+   width: 15px;
+}

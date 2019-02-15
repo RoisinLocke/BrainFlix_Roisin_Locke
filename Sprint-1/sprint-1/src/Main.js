@@ -82,15 +82,13 @@ class Comments extends Component {
     render() {
         
         const comments = this.props.mainObject.comments;
-        console.log(comments);
         let commentsJSX = [];
         for(let i = 0; i < comments.length; i++) {
             
             commentsJSX.push(<CommentPosted name={comments[i].name}
                 comment={comments[i].comment} 
                 key={i}
-                />);  
-            console.log(commentsJSX);}
+                />);  }
         
         return (
             <div>
