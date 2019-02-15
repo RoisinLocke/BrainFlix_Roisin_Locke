@@ -1,45 +1,31 @@
 import React, { Component } from 'react';
 import './main.scss';
-// import mainObject from './ObjectData';
 import CommentPosted from './CommentsData';
+import { NONAME } from 'dns';
 
-//in Main we will need video (with possibiltiy to change later)
-//title & decription with possibility to change later
-//dynamic comments section
-
-//in state we have an array of comments
-//we can add, delete, like, edit text - these are how they can change
-//create state modifying method for each
 //remember - must use this.setState() to change data
 //use onClicks and others to hook up state modifying methods to the elements
 //that should trigger them
 
 class Video extends Component {
 
-    clickHandler = () => {
-        console.log("You clicked!!")
-    //     if ( button === "video__play") {
-    //         if (this.paused || this.ended) {
-    //             this.setAttribute('data-state', 'play');
-    //         }
-    //         else {
-    //             this.setAttribute('data-state', 'pause');
-    //         }
-    //     }
+    playHandler = () => {
+        this.refs.videoRef.paused ? this.refs.videoRef.play() : this.refs.videoRef.pause();
     }
 
     render() {
         return (
             <figure className="video">
-                <video poster="Assets/Images/video-list-0.jpg" className="main__video" src="Assets/Video/BrainStation Sample Video.mp4" type="mp4">
+                <video ref="videoRef" poster="Assets/Images/video-list-0.jpg" className="main__video" src="Assets/Video/BrainStation Sample Video.mp4" type="mp4">
                 </video>
                 <div className="video__controls">
-                    <button className="video__play" type="button" data-state="play" onClick={this.clickHandler}></button>
-                        <img className="video__play--svg" src="Assets/Icons/SVG/Icon-play.svg"/>
+                    <div className="video__playPauseButton"></div>
+                    <button className="video__play" type="button" data-state="play" onClick={this.playHandler}><img className="video__play--svg" src="Assets/Icons/SVG/Icon-play.svg"/></button>
+                    <button className="video__pause" type="button" data-state="pause" onClick={this.pauseHandler}><img className="video__pause--svg" src="Assets/Icons/SVG/Icon-pause.svg"/> </button>
                     <div className="video__progressContainer"></div>
                     <div className="video__progress">
                         {/* <span className="video__progressBar"></span> */}
-                        </div>
+                    </div>
                     <div className="video__vol"></div>
                         <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"/></button>
                         <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg"/></button>
@@ -86,6 +72,7 @@ class Comments extends Component {
         for(let i = 0; i < comments.length; i++) {
             
             commentsJSX.push(<CommentPosted name={comments[i].name}
+                timestamp={comments[i].timestamp}
                 comment={comments[i].comment} 
                 key={i}
                 />);  }
