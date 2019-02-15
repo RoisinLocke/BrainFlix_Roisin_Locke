@@ -34,16 +34,15 @@ class Video extends Component {
                 <video poster="Assets/Images/video-list-0.jpg" className="main__video" src="Assets/Video/BrainStation Sample Video.mp4" type="mp4">
                 </video>
                 <div className="video__controls">
-                    <button className="video__play" type="button" data-state="play" onClick={this.clickHandler}><img src="Assets/Icons/PNG/Icon-play.png"/></button>
-                    <div className="video__progressContainer">
-                        <progress className="video__progress" value="0" min="0">
-                            <span className="video__progressBar"></span>
-                        </progress>
-                    </div>
-                    <div className="video__vol">
+                    <button className="video__play" type="button" data-state="play" onClick={this.clickHandler}></button>
+                        <img className="video__play--svg" src="Assets/Icons/SVG/Icon-play.svg"/>
+                    <div className="video__progressContainer"></div>
+                    <div className="video__progress">
+                        {/* <span className="video__progressBar"></span> */}
+                        </div>
+                    <div className="video__vol"></div>
                         <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"/></button>
                         <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg"/></button>
-                    </div>
                 </div>
             </figure>
         )
@@ -91,15 +90,8 @@ class Comments extends Component {
                 comment={comments[i].comment} 
                 key={i}
                 />);  
-     
-    console.log(commentsJSX);
-}
-        // let commentJSX = comments.map((c,i)=>{
-        //     return <CommentPosted name={c.name}
-        //             comment={c.comment} 
-        //             key={i}
-        //             />
-        // })
+            console.log(commentsJSX);}
+        
         return (
             <div>
                 <h2 className="comments__title">3 Comments</h2>
@@ -110,13 +102,12 @@ class Comments extends Component {
                 <div className="comments__section">
                     <form id="comment__form">
                         <p className="comment__p">JOIN THE CONVERSATION</p>
-                        <textarea className="comment__box" type="text" name="commentArea" id="commentInput" placeholder="Add a new comment" required></textarea>
+                        <textarea className="comment__box" type="text" name="commentArea" id="commentInput" placeholder="Add your comment..." required></textarea>
                         <input type="submit" id="commentButton" value="COMMENT"/>
                     </form>
                 </div>
                 </div>
                 {commentsJSX}
-                {/* {commentJSX} */}
              </div>
         )
     }

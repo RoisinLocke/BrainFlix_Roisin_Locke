@@ -21,18 +21,30 @@ nav {
     width: 268px;
     margin-bottom: 8px;
     padding: 10px;
+    padding-left: 40px;
     border-radius: 4px;
     background-color: $gallerybackground;
+    background: url(./Icon-search.svg) no-repeat scroll 10px 10px; 
+    background-position-x: 11px;
+    background-position-y: 8px;
 }
 
 .nav__button {
     width: 233px;
     margin-bottom: 16px;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     color: white;
     border: none;
     background-color: $lightblue;
     border-radius: 4px;
+}
+
+h3 {
+    width: 45%;
+    margin: 0;
 }
 
 .nav__img--profile {

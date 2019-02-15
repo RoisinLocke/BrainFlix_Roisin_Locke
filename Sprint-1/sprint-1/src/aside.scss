@@ -27,8 +27,12 @@ h4 {
 }
 
 .videoCard__title {
-    margin: 3px 0 8px 16px;
+    margin: 0 0 8px 16px;
     font-weight: bold;
+    white-space: unset;
+    max-height: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .videoCard__channel {

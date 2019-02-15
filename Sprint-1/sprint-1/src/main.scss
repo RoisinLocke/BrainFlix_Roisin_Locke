@@ -28,16 +28,23 @@
 }
 
 .video__play, .video__progressContainer, .video__vol {
+
+    height: 30px;
     background-color: black;
     opacity: 0.5;
     border-radius: 4px;
 }
 
 .video__play {
-    width: 52px;
-    padding-top: 4px;
-    padding-left: 10px;
+    width: 55px;
     border: none;
+}
+
+.video__play--svg {
+    height: 20px;
+    position: absolute;
+    left: 22px;
+    top: 5px;
 }
 
 .video__progressContainer  {
@@ -46,21 +53,37 @@
 }
 
 .video__progress {
-    width:127px;
+    width: 100px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    left: 75px;
+    top: 13px;
 }
 
-.video__progressbar {
-    height: 4px;
-    color: white;
-}
+// .video__progressbar {
+//     width: 100px;
+//     height: 4px;
+//     color: black;
+// }
 
 
 .video__vol{
-    width: 74px;
-    padding-top: 4px;
+    width: 71px;
     padding-left: 12px;
 }
 
+.video__fullscreen {
+    position: absolute;
+    left: 214px;
+    top: 4px;
+}
+
+.video__volume {
+    position: absolute;
+    left: 248px;
+    top: 4px;
+}
 
 .main__title {
     width: 100%;
@@ -70,6 +93,7 @@
 }
 
 .main__channel {
+    width: 28%;
     margin: 8px 8px 32px 0px;
 }
 
@@ -77,6 +101,7 @@
     width: 150px;
     height: 16px;
     padding: 3px;
+    padding-left: 0;
     margin: 8px 0px 32px 0px
 }
 
@@ -101,6 +126,7 @@
 .comments__container {
     width: 288px;
     margin: 16px 16px 0 16px;
+    font-family: 'Avenir', sans-serif;
     display: inline-flex;
     border-bottom: solid 1px $darkgrey;
 
