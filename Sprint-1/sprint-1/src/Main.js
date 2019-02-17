@@ -15,22 +15,21 @@ class Video extends Component {
 
     render() {
         return (
-            <figure className="video">
+            <div className="video">
                 <video ref="videoRef" poster="Assets/Images/video-list-0.jpg" className="main__video" src="Assets/Video/BrainStation Sample Video.mp4" type="mp4">
                 </video>
                 <div className="video__controls">
                     <div className="video__playPauseButton"></div>
                     <button className="video__play" type="button" data-state="play" onClick={this.playHandler}><img className="video__play--svg" src="Assets/Icons/SVG/Icon-play.svg"/></button>
-                    <button className="video__pause" type="button" data-state="pause" onClick={this.pauseHandler}><img className="video__pause--svg" src="Assets/Icons/SVG/Icon-pause.svg"/> </button>
+                    {/* <button className="video__pause" type="button" data-state="pause" onClick={this.pauseHandler}><img className="video__pause--svg" src="Assets/Icons/SVG/Icon-pause.svg"/> </button> */}
                     <div className="video__progressContainer"></div>
-                    <div className="video__progress">
-                        {/* <span className="video__progressBar"></span> */}
-                    </div>
+                    <div className="video__progress">  
+                    </div><span className="video__progressBar">0:00/0:42</span>
                     <div className="video__vol"></div>
-                        <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"/></button>
-                        <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg"/></button>
+                    <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"/></button>
+                    <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg"/></button>
                 </div>
-            </figure>
+            </div>
         )
     }
 }
@@ -43,7 +42,7 @@ class Description extends Component {
             <div>
                 <section className="main__container">
                     <h2 className="main__title">{mainObject.title}</h2>
-                    <h3 className="main__channel">{mainObject.channel}</h3>
+                    <h3 className="main__channel">By {mainObject.channel}</h3>
                     <p className="main__date">12/18/2018</p>
                     <div className="main__icons">
                         <div>

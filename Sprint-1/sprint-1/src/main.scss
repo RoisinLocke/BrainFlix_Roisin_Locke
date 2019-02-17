@@ -1,8 +1,23 @@
 @import 'variables.scss';
 
+.video {
+    @media (min-width: $tablet){
+        width: 768px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        height: 400px;
+    }
+}
+
 .main__video {
     width: 100%;
     height: 183px;
+ 
+    @media (min-width: $tablet) {
+        width: 700px;
+        height: 400px;
+    }
 }
 
 .main__container {
@@ -12,11 +27,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-}
 
-.video{
-    margin: 0;
-    height: 183px;
+    @media (min-width: $tablet) {
+        padding-top: 48px;
+        margin: 0 24px;
+    }
 }
 
 .video__controls {
@@ -25,9 +40,16 @@
     margin: 0 16px;
     position: relative;
     bottom: 48px; 
+
+    @media (min-width: $tablet) {
+        position: absolute;
+        top: 430px;
+        width: 700px;
+        margin: 0 8px;
+    }
 }
 
-.video__playPauseButton, .video__pause, .video__progressContainer, .video__vol {
+.video__playPauseButton, .video__progressContainer, .video__vol {
     height: 30px;
     background-color: black;
     opacity: 0.5;
@@ -58,30 +80,35 @@
     display: none;
 }
 
-.video__pause {
-    position: absolute;
-    height: 30px;
-    width: 55px;
-    border-radius: 4px;
-    border: none;
-    background: none;
-    display: none;
-}
+// .video__pause {
+//     position: absolute;
+//     height: 30px;
+//     width: 55px;
+//     border-radius: 4px;
+//     border: none;
+//     background: none;
+//     display: none;
+// }
 
-.video__pause--svg {
-    height: 20px;
-    position: absolute;
-    left: 22px;
-    top: 5px;
-    display: none;
-}
-.video__pause--svg:active {
-    display: none;
-}
+// .video__pause--svg {
+//     height: 20px;
+//     position: absolute;
+//     left: 22px;
+//     top: 5px;
+//     display: none;
+// }
+// .video__pause--svg:active {
+//     display: none;
+// }
 
 .video__progressContainer  {
     width: 134px;
     margin: 0 8px;
+
+    @media (min-width: $tablet) {
+        width: 519px;
+        margin: 0 16px;
+    }
 }
 
 .video__progress {
@@ -91,30 +118,52 @@
     position: absolute;
     left: 75px;
     top: 13px;
+
+    @media (min-width: $tablet) {
+        width: 407px;
+        margin-left: 8px;
+    }
 }
 
-// .video__progressbar {
-//     width: 100px;
-//     height: 4px;
-//     color: black;
-// }
+.video__progressBar {
+    @media (max-width: 767px) {
+        display: none;
+    }
+    position: absolute;
+    right: 110px;
+    top: 3px;
+    color: white;
+    margin: 0 16px;
+}
 
 
 .video__vol{
     width: 71px;
     padding-left: 12px;
+
+    @media (min-width: $tablet) {
+        width: 58px;
+    }
 }
 
 .video__fullscreen {
     position: absolute;
     left: 214px;
     top: 4px;
+
+    @media (min-width: $tablet) {
+        left: 610px;
+    }
 }
 
 .video__volume {
     position: absolute;
     left: 248px;
     top: 4px;
+
+    @media (min-width: $tablet) {
+        left: 640px;
+    }
 }
 
 .main__title {
@@ -122,11 +171,21 @@
     align-self: flex-start;
     margin-top: 0;
     margin-bottom: 8px;
+
+    @media (min-width: $tablet) {
+        margin-bottom: 24px;
+    }
 }
 
 .main__channel {
-    width: 28%;
+    width: 37%;
     margin: 8px 8px 32px 0px;
+
+    @media (min-width: $tablet) {
+        width: 15%;
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
 }
 
 .main__date {
@@ -134,13 +193,22 @@
     height: 16px;
     padding: 3px;
     padding-left: 0;
-    margin: 8px 0px 32px 0px
+    margin: 8px 0px 32px 0px;
+
+    @media (min-width: $tablet) {
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
 }
 
 .main__icons {
     margin-bottom: 24px;
     display: flex;
     flex-wrap: wrap;
+
+    @media (min-width: $tablet) {
+        margin-left: 243px;
+    }
 }
 
 .main__views{
@@ -149,10 +217,19 @@
 
 .main__likes{
     margin: 0 24px 0 8px;
+
+    @media (min-width: $tablet) {
+        margin-right: 0;
+    }
 }
 
 .article__description {
     margin: 24px 16px 40px 16px;
+
+    @media (min-width: $tablet) {
+        width: 77%;
+        margin: 40px 24px 64px 24px;
+    }
 }
 
 .comments__container {
@@ -167,8 +244,8 @@
     }
 
     @media (min-width: $tablet) {
-        width: 520px;
-        margin: 0 100px;
+        width: 720px;
+        margin: 0 24px;
     }
 
     @media (min-width: 800px) {
@@ -183,6 +260,10 @@
 
 .comments__title {
     margin: 0 16px;
+
+    @media (min-width: $tablet) {
+        margin: 0 24px;
+    }
 }
 
 .comments__img {
@@ -192,6 +273,12 @@
     object-fit: cover;
     object-position: left;
     margin-top: 24px;
+
+    @media (min-width: $tablet) {
+        height: 32px;
+        width: 32px;
+        margin-top: 75px;
+    }
 
     @media (min-width: $desktop) {
         height: 48px;
@@ -204,7 +291,10 @@
     margin-left: 24px;
 
     @media (min-width: $tablet) {
-        width: 520px;
+        width: 92%;;
+        margin-left: 8px;
+        height: 120px;
+        margin-bottom: 24px;
     }
 
     @media (min-width: $desktop) {
@@ -214,7 +304,8 @@
 
 #comment__form {
     @media (min-width: $tablet) {
-        width: 460px;
+        width: 100%;
+
         margin-bottom: 24px;
         display: flex;
         flex-direction: column;
@@ -234,6 +325,10 @@
 .comment__p {
     color: $darkgrey;
     font-weight: bold;
+
+    @media (min-width: $tablet) {
+        margin-top: 32px;
+    }
 
     @media (min-width: $desktop) {
         margin-top: 0;
@@ -262,7 +357,7 @@
     }
 
     @media (min-width: $tablet) {
-        height: 62px;
+        height: 13px;
         width: 424px;
         padding: 16px;
     }
@@ -284,13 +379,16 @@
     color: #FFF;
     border-radius: 4px;
     border: none;
+    align-self: flex-end;
     margin: 16px 0 24px 0;
 
     @media (min-width:$tablet) {
-        align-self: flex-end;
+        height: 47px;
         width: 160px;
-        height: 48px;
-        margin-top: 16px;
+        position: relative;
+        bottom: 47px;
+        left: 12px;
+        margin: 0 40px 0 0;
     }
 
     @media (min-width: $desktop) {
@@ -315,8 +413,8 @@
     }
 
     @media (min-width: $tablet) {
-        width: 520px;
-        margin: 0 124px;
+        margin: 0 24px;
+        justify-content: right;
     }
 
     @media (min-width: 800px) {
@@ -344,8 +442,13 @@
     object-position: left;
     margin-top: 24px;
 
-    @media (min-width: $desktop) {
-        margin-top: 24px;
+    @media (min-width: $tablet) {
+        height: 32px;
+        width: 32px;
+        position: relative;
+        top: 26px;
+        margin-top: 0;
+        margin-right: 16px;
     }
  }
 
@@ -353,6 +456,10 @@
     width: 136px;
     margin: 24px 0px 16px 16px;
     font-weight: bold;
+
+    @media (min-width: $tablet) {
+        margin: 24px 0 0 0;
+    }
  }
 
  .posted__date {
@@ -379,6 +486,7 @@
 
     @media (min-width: $tablet) {
         width: 317px;
+        margin: 24px 0 0 0;
     }
 
     @media (min-width: 800px) {
@@ -407,10 +515,19 @@
 }
 
  .posted__comment {
-     margin-left: 54px;
-     margin-top: 0;
-     margin-bottom: 0;
-     padding-bottom: 24px;
+    width: 234px;
+    margin-left: 54px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 24px;
+
+    @media (min-width: $tablet) {
+        width: 624px;
+        margin-left: 48px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+    }
+
  }
 
  .button__container {

@@ -4,12 +4,21 @@ nav {
     margin: 0 16px;
     display: flex;
     flex-wrap: wrap;
+
+    @media (min-width:$tablet) {
+        margin: 16px 24px;
+    }
 }
 
 .nav__svg {
     height: 48px;
     width: 288px;
     text-align: center;
+
+    @media (min-width: $tablet) {
+        width: 124px;
+        margin-right: 169px;
+    }
 }
 
 .nav__logo {
@@ -27,6 +36,12 @@ nav {
     background: url(./Icon-search.svg) no-repeat scroll 10px 10px; 
     background-position-x: 11px;
     background-position-y: 8px;
+
+    @media (min-width: $tablet) {
+        width: 170px;
+        margin-bottom: 0;
+        background-position-y: 14px;
+    }
 }
 
 .nav__button {
@@ -40,11 +55,25 @@ nav {
     border: none;
     background-color: $lightblue;
     border-radius: 4px;
+
+    @media (min-width: $tablet) {
+        width: 104px;
+        margin: 0 24px;
+        padding: 0;
+    }
+}
+
+.nav__img--upload {
+        margin-right: 5px;
 }
 
 h3 {
     width: 45%;
     margin: 0;
+
+    @media (min-width: $tablet) {
+        width: 50%;
+    }
 }
 
 .nav__img--profile {
@@ -54,4 +83,10 @@ h3 {
     object-fit: cover;
     object-position: left;
     margin-left: 16px;
+
+    @media (min-width: $tablet) {
+        height: 48px;
+        width: 48px;
+        margin: 0;
+    }
 }
