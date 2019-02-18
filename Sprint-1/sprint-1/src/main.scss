@@ -217,7 +217,7 @@
     }
 
     position: absolute;
-    right: 110px;
+    right: 93px;
     top: 3px;
     color: white;
     margin: 0 16px;
@@ -233,7 +233,7 @@
     padding-left: 12px;
 
     @media (min-width: $tablet) {
-        width: 58px;
+        width: 65px;
     }
 
     @media (min-width: $desktop) {
@@ -261,7 +261,7 @@
     top: 4px;
 
     @media (min-width: $tablet) {
-        left: 640px;
+        left: 645px;
     }
 
     @media (min-width: $desktop) {
@@ -386,7 +386,7 @@
     }
 
     @media (min-width: $desktop) {
-        margin-left: 170px;
+        margin-left: 188px;
         margin-right: 32px;
     }
 }
@@ -416,11 +416,19 @@
     }
 }
 
+.article__info {
+    margin: 0;
+}
+
 .comments {
     @media (min-width: $desktop) {
         width: 712px;
         margin-left: 0;
     }
+}
+
+.comments__title {
+    margin: 0;
 }
 
 .comments__container {
@@ -448,8 +456,8 @@
     margin-top: 24px;
 
     @media (min-width: $tablet) {
-        height: 32px;
-        width: 32px;
+        height: 48px;
+        width: 48px;
         margin-top: 75px;
     }
 
@@ -466,7 +474,7 @@
 
     @media (min-width: $tablet) {
         width: 92%;;
-        margin-left: 8px;
+        margin-left: 16px;
         height: 120px;
         margin-bottom: 24px;
     }
@@ -519,12 +527,12 @@
 
     @media (min-width: $tablet) {
         height: 13px;
-        width: 424px;
+        width: 406px;
         padding: 16px;
     }
 
     @media (min-width: $desktop) {
-        width: 426px;
+        width: 402px;
     }
 }
 
@@ -551,13 +559,14 @@
         width: 160px;
         position: relative;
         bottom: 47px;
-        left: 12px;
-        margin: 0 40px 0 0;
+        left: 0px;
+        margin: 0 40px 0 16px;
     }
 
     @media (min-width: $desktop) {
         margin: 0 56px 0 16px;
-        bottom: 46px;
+        bottom: 48px;
+        left: 13px;
     }
 }
 
@@ -590,8 +599,8 @@
     margin-top: 24px;
 
     @media (min-width: $tablet) {
-        height: 32px;
-        width: 32px;
+        height: 48px;
+        width: 48px;
         position: relative;
         top: 26px;
         margin-top: 0;
@@ -662,7 +671,7 @@
     }
 
     @media (min-width: 1240px) {
-        width: 45vw;
+        width: 44vw;
     }
 
     @media (min-width: $desktop) {
@@ -692,7 +701,7 @@
 
     @media (min-width: $tablet) {
         width: 624px;
-        margin-left: 48px;
+        margin-left: 64px;
         padding-bottom: 8px;
         padding-top: 8px;
     }

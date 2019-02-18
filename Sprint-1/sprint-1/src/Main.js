@@ -52,7 +52,7 @@ class Description extends Component {
                     </div>
                 </section>
                 <article className="article__description">
-                    <p>{mainObject.description}</p>
+                    <p className="article__info">{mainObject.description}</p>
                 </article>
             </div>
         )
