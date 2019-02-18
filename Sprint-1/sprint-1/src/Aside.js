@@ -19,11 +19,6 @@ class Aside extends Component {
             <div className="videoAside">
                 <h4>NEXT VIDEO</h4>
                 {videoJSX}
-
-                {/* {videos.map(video => <VideoCard title ={videos[i].title}
-                                                channel={videos[i].channel}
-                                                image={video[i].image} 
-                                                key={video[i.id]}/>)} */}
             </div>
         )
     }

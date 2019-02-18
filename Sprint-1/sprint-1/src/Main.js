@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import './main.scss';
 import CommentPosted from './CommentsData';
-import { NONAME } from 'dns';
-
-//remember - must use this.setState() to change data
-//use onClicks and others to hook up state modifying methods to the elements
-//that should trigger them
+import Aside from './Aside';
 
 class Video extends Component {
 
@@ -23,8 +19,8 @@ class Video extends Component {
                     <button className="video__play" type="button" data-state="play" onClick={this.playHandler}><img className="video__play--svg" src="Assets/Icons/SVG/Icon-play.svg"/></button>
                     {/* <button className="video__pause" type="button" data-state="pause" onClick={this.pauseHandler}><img className="video__pause--svg" src="Assets/Icons/SVG/Icon-pause.svg"/> </button> */}
                     <div className="video__progressContainer"></div>
-                    <div className="video__progress">  
-                    </div><span className="video__progressBar">0:00/0:42</span>
+                    <div className="video__progress"></div>
+                    <span className="video__progressBar">0:00/0:42</span>
                     <div className="video__vol"></div>
                     <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"/></button>
                     <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg"/></button>
@@ -80,7 +76,7 @@ class Comments extends Component {
                 />);  }
         
         return (
-            <div>
+            <div className="comments">
                 <h2 className="comments__title">3 Comments</h2>
                 <div className="comments__container">
                 <div className="comments__image">
@@ -105,11 +101,20 @@ class Comments extends Component {
 class Main extends Component {
     render() {
         return (
-            <>
-                <Video />
-                <Description mainObject={this.props.mainObject}/>
-                <Comments submit= {this.props.submit} mainObject={this.props.mainObject}/> 
-            </>
+            <article>
+                <article className="videoStuff">
+                    <Video />
+                </article>
+            <section className="parent">
+                <section className="main">
+                    <Description mainObject={this.props.mainObject}/>
+                    <Comments submit= {this.props.submit} mainObject={this.props.mainObject}/> 
+                </section> 
+                <section className="videos">
+                    <Aside videos={this.props.videos}/>
+                </section>
+            </section>
+            </article>
         )
     }
 }

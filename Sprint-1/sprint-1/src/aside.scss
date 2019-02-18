@@ -1,10 +1,22 @@
 @import 'variables.scss';
 
-.videoAside{
-    margin: 0 16px;
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
 
-    @media (min-width: $tablet) {
-        margin: 0 24px;
+    @media (min-width: $desktop) {
+        width: 368px;
+    }
+}
+
+.videoAside{
+    @media (min-width: $desktop) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 368px;
+        margin-left: 24px;
     }
 }
 
@@ -27,10 +39,14 @@ h4 {
 }
 
 .videoCard__details{
-    width: 58%;
+    width: 156px;
 
     @media (min-width: $tablet) {
-        width: 31%;
+        width: 45%;
+    }
+
+    @media (min-width: $desktop) {
+        width: 63%;
     }
 }
 

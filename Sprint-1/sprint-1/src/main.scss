@@ -1,12 +1,23 @@
 @import 'variables.scss';
 
 .video {
+    height: 183px;
+    width: 100%;
+    background-color: black;
+
     @media (min-width: $tablet){
-        width: 768px;
-        background-color: black;
+        width: 100%;
         display: flex;
         justify-content: center;
         height: 400px;
+    }
+
+    @media (min-width: 1000px) {
+        height: 500px;
+    }
+
+    @media (min-width: $desktop) {
+        height: 540px
     }
 }
 
@@ -18,34 +29,101 @@
         width: 700px;
         height: 400px;
     }
-}
 
-.main__container {
-    margin: 0 16px;
-    border-bottom: solid 1px $fontshadow;
-    padding-top: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-
-    @media (min-width: $tablet) {
-        padding-top: 48px;
-        margin: 0 24px;
+    @media (min-width: 1000px) {
+        width: 880px;
+        height: 500px;
     }
+
+    @media (min-width: $desktop) {
+        width: 944px;
+        height: 540px;
+    }
+
 }
 
 .video__controls {
+    height: 30px;
     display: flex;
     flex-wrap: wrap;
     margin: 0 16px;
     position: relative;
     bottom: 48px; 
 
+    @media (min-width: 335px) {
+        margin-left: 5%;
+    }
+
+    @media (min-width: 360px) {
+        margin-left: 11%;
+    }
+
+    @media (min-width: 410px) {
+        margin-left: 15%;
+    }
+
+    @media (min-width: 450px) {
+        margin-left: 18%;
+    }
+
+    @media (min-width: 500px) {
+        margin-left: 21%;
+    }
+
+    @media (min-width: 550px) {
+        margin-left: 24%;
+    }
+
+    @media (min-width: 600px) {
+        margin-left: 26%;
+    }
+
+    @media (min-width: 650px) {
+        margin-left: 28%;
+    }
+
+    @media (min-width: 700px) {
+        margin-left: 30%;
+    }
+
     @media (min-width: $tablet) {
         position: absolute;
         top: 430px;
-        width: 700px;
+        right: 34px;
+        width: 684px;
         margin: 0 8px;
+    }
+
+    @media (min-width: 775px) {
+        right: 5%;
+    }
+
+    @media (min-width: 810px) {
+        right: 7%;
+    }
+
+    @media (min-width: 850px) {
+        right: 10%;
+    }
+
+    @media (min-width: 900px) {
+        right: 12%;
+    }
+
+    @media (min-width: 1000px) {
+        top: 530px;
+        right: 16%;
+    }
+
+    @media (min-width: 1200px) {
+        right: 21%;
+    }
+
+    @media (min-width: $desktop) {
+        top: 570px;
+        width: 912px;
+        right: 248px;
+        margin: 0 16px;
     }
 }
 
@@ -109,6 +187,10 @@
         width: 519px;
         margin: 0 16px;
     }
+
+    @media (min-width: $desktop) {
+        width: 751px;
+    }
 }
 
 .video__progress {
@@ -123,17 +205,26 @@
         width: 407px;
         margin-left: 8px;
     }
+
+    @media (min-width: $desktop) {
+        width: 640px;
+    }
 }
 
 .video__progressBar {
     @media (max-width: 767px) {
         display: none;
     }
+
     position: absolute;
     right: 110px;
     top: 3px;
     color: white;
     margin: 0 16px;
+
+    @media (min-width: $desktop) {
+        right: 89px;
+    }
 }
 
 
@@ -143,6 +234,10 @@
 
     @media (min-width: $tablet) {
         width: 58px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 61px;
     }
 }
 
@@ -154,6 +249,10 @@
     @media (min-width: $tablet) {
         left: 610px;
     }
+
+    @media (min-width: $desktop) {
+        left: 845px;
+    }
 }
 
 .video__volume {
@@ -163,6 +262,72 @@
 
     @media (min-width: $tablet) {
         left: 640px;
+    }
+
+    @media (min-width: $desktop) {
+        left: 875px;
+    }
+}
+
+.parent {
+    margin: 0 16px;
+
+    @media (min-width: 321px) {
+        margin: 0 3%;
+    }
+
+    @media (min-width: 445px) {
+        margin: 0 10%;
+    }
+
+    @media (min-width: $tablet) {
+        margin: 0 24px;
+    }
+
+    @media (min-width: 780px) {
+        margin: 0 4%;
+    }
+
+    @media (min-width: 900px) {
+        margin: 0 10%;
+    }
+
+    @media (min-width: 1100px) {
+        margin: 0 17%;
+    }
+
+    @media (min-width: 1250px) {
+        margin: 0 19%;
+    }
+
+    @media (min-width: 1320px) {
+        margin: 0 20%;
+    }
+
+    @media (min-width: $desktop) {
+        display: flex;
+        margin: 0 180px;   
+    }
+}
+
+.main{
+    @media (min-width: $desktop) {
+        display: flex;
+        width: 712px;
+        flex-direction: column;
+    }
+}
+
+
+.main__container {
+    border-bottom: solid 1px $fontshadow;
+    padding-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    @media (min-width: $tablet) {
+        padding-top: 48px;
     }
 }
 
@@ -175,6 +340,10 @@
     @media (min-width: $tablet) {
         margin-bottom: 24px;
     }
+
+    @media (min-width: $desktop) {
+        @include h1;
+    }
 }
 
 .main__channel {
@@ -185,6 +354,12 @@
         width: 15%;
         margin-top: 0px;
         margin-bottom: 24px;
+    }
+
+    @media (min-width: $desktop) {
+        @include h3;
+        font-weight: bold;
+        width: 17%;
     }
 }
 
@@ -209,6 +384,11 @@
     @media (min-width: $tablet) {
         margin-left: 243px;
     }
+
+    @media (min-width: $desktop) {
+        margin-left: 170px;
+        margin-right: 32px;
+    }
 }
 
 .main__views{
@@ -224,45 +404,38 @@
 }
 
 .article__description {
-    margin: 24px 16px 40px 16px;
+    margin: 24px 0 40px 0;
 
     @media (min-width: $tablet) {
-        width: 77%;
-        margin: 40px 24px 64px 24px;
+        width: 81%;
+        margin: 40px 0 64px 0;
+    }
+
+    @media (min-width: $desktop) {
+        width: 83%;
+    }
+}
+
+.comments {
+    @media (min-width: $desktop) {
+        width: 712px;
+        margin-left: 0;
     }
 }
 
 .comments__container {
     width: 288px;
-    margin: 16px 16px 0 16px;
+    margin-top: 16px;
     font-family: 'Avenir', sans-serif;
     display: inline-flex;
     border-bottom: solid 1px $darkgrey;
 
-    @media (min-width: 400px) {
+    @media (min-width: 321px) {
         width: 100%;
     }
 
     @media (min-width: $tablet) {
-        width: 720px;
-        margin: 0 24px;
-    }
-
-    @media (min-width: 800px) {
-        border-bottom: none;
-    }
-
-    @media (min-width: $desktop) {
-        width: 528px;
-        margin: 0 276px;
-    }
-}
-
-.comments__title {
-    margin: 0 16px;
-
-    @media (min-width: $tablet) {
-        margin: 0 24px;
+        margin: 0
     }
 }
 
@@ -281,14 +454,15 @@
     }
 
     @media (min-width: $desktop) {
-        height: 48px;
-        width: 48px;
-        // margin-top: 84px;
+        height: 40px;
+        width: 40px;
+        margin-top: 57px;
     }
 }
 
 .comments__section {
     margin-left: 24px;
+    width: 100%;
 
     @media (min-width: $tablet) {
         width: 92%;;
@@ -298,29 +472,20 @@
     }
 
     @media (min-width: $desktop) {
-        margin-left: 20px;
+        height: 77px;
+        margin-top: 24px;
+        margin-left: 16px;
     }
 }
 
 #comment__form {
     @media (min-width: $tablet) {
         width: 100%;
-
         margin-bottom: 24px;
         display: flex;
         flex-direction: column;
     }
 }
-
-// .comment__title {
-//     color: $darkgrey;
-//     font-weight: bold;
-//     margin-top: 0;
-
-//     @media (min-width: $desktop) {
-//         margin-bottom: 8px;
-//     }
-// }
 
 .comment__p {
     color: $darkgrey;
@@ -348,12 +513,8 @@
     padding: 10px;
     resize: none;
 
-    @media (min-width: 400px) {
-        width: 232px;
-    }
-
-    @media (min-width: 550px) {
-        width: 49vw;
+    @media (min-width: 321px) {
+        width: 80%;
     }
 
     @media (min-width: $tablet) {
@@ -364,7 +525,6 @@
 
     @media (min-width: $desktop) {
         width: 426px;
-        margin-bottom: 24px;
     }
 }
 
@@ -382,6 +542,10 @@
     align-self: flex-end;
     margin: 16px 0 24px 0;
 
+    @media (min-width: 321px) {
+        width: 85%;
+    }
+
     @media (min-width:$tablet) {
         height: 47px;
         width: 160px;
@@ -392,8 +556,8 @@
     }
 
     @media (min-width: $desktop) {
-        margin-top: 0;
-        margin-bottom: 0;
+        margin: 0 56px 0 16px;
+        bottom: 46px;
     }
 }
 
@@ -405,31 +569,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 16px;
     border-bottom: solid 1px $darkgrey;
 
-    @media (min-width: 400px) {
-        @include margin10;
-    }
-
     @media (min-width: $tablet) {
-        margin: 0 24px;
         justify-content: right;
     }
 
-    @media (min-width: 800px) {
-        width: 545px;
-        margin: 0 15%;
-    }
-
-    @media (min-width: 820px) {
-        width: 64vw;
-        margin: 0 17%;
-    }
-
-    @media (min-width:$desktop) {
-        width: 528px;
-        margin: 0 456px;
+    @media (min-width: $desktop) {
+        width: 712px;
     }
 }
 
@@ -450,12 +597,21 @@
         margin-top: 0;
         margin-right: 16px;
     }
+
+    @media (min-width: $desktop) {
+        height: 40px;
+        width: 40px;
+    }
  }
 
  .posted__name {
     width: 136px;
     margin: 24px 0px 16px 16px;
     font-weight: bold;
+
+    @media (min-width: 580px) {
+        margin-left: 10%;
+    }
 
     @media (min-width: $tablet) {
         margin: 24px 0 0 0;
@@ -481,7 +637,7 @@
     }
 
     @media (min-width: 580px) {
-        width: 45vw;
+        width: 39vw;
     }
 
     @media (min-width: $tablet) {
@@ -521,6 +677,19 @@
     margin-bottom: 0;
     padding-bottom: 24px;
 
+    @media (min-width: 400px) {
+        width: 65%;
+    }
+
+    @media (min-width: 445px) {
+        margin: 0;
+    }
+
+    @media (min-width: 580px) {
+        width: 80%;
+        margin-left: 21%;
+    }
+
     @media (min-width: $tablet) {
         width: 624px;
         margin-left: 48px;
@@ -528,12 +697,23 @@
         padding-top: 8px;
     }
 
+    @media (min-width: $desktop) {
+        margin-left: 56px;
+    }
  }
 
  .button__container {
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @media (min-width: 400px) {
+        width: 75%;
+    }
+
+    @media (min-width: $tablet) {
+        width: 100%;
+    }
 }
 
 .delete__container {
@@ -583,3 +763,4 @@
    height: 15px;
    width: 15px;
 }
+

@@ -3,8 +3,6 @@ import './App.scss';
 import mainObject from './ObjectData';
 import NavBar from './NavBar';
 import Main from './Main';
-import Aside from './Aside';
-import videoCard from './VideoCard';
 import videoData from './VideoCardData';
 
 class App extends Component {
@@ -13,9 +11,6 @@ class App extends Component {
     videos: videoData,
     mainObject: mainObject
   }
-
-  // constructor() {
-  //   super()
 
   addComment = (e) => {
     const newObject = { ...this.state.mainObject, 
@@ -32,8 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Main submit={this.addComment} mainObject={this.state.mainObject}/>
-        <Aside videos={this.state.videos}/>
+        <Main submit={this.addComment} mainObject={this.state.mainObject} videos={this.state.videos}/>
       </div>
     );
   }
