@@ -17,7 +17,8 @@ main {
 
     @media (min-width: $tablet) {
         padding-top: 48px;
-        margin-top: 0;
+        padding-bottom: 32px;
+        margin: 0;
         border-bottom: solid 1px $fontshadow;
     }
 }
@@ -56,6 +57,18 @@ main {
     }
 }
 
+.form__description {
+    @media (min-width: $tablet) {
+        margin-top: 0;
+    }
+}
+
+.upload__thumb{
+    @media (min-width: $tablet) {
+        margin-top: 40px;
+    }
+}
+
 .form__box--description, .form__box--title {
     height: 143px;
     width: 266px;
@@ -73,8 +86,8 @@ main {
     }
 
     @media (min-width: $tablet) {
-        height: 13px;
-        width: 406px;
+        height: 143px;
+        width: 686px;
         padding: 16px;
     }
 
@@ -86,6 +99,10 @@ main {
 .form__box--title {
     height: 20px;
     margin-bottom: 24px;
+
+    @media (min-width: $tablet) {
+        height: 20px;
+    }
 }
 
 .comment__box:active {

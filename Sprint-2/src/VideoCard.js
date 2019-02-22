@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+
+//componentDidMount 
+
+//when our component is going on the page use this to GET data, then setting STATE to display
+//data on the page
 class VideoCard extends Component {
     render() {
         return(

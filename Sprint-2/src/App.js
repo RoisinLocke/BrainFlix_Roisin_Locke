@@ -6,12 +6,18 @@ import NavBar from './NavBar';
 import Main from './Main';
 import videoData from './VideoCardData';
 import Upload from './Upload';
+import axios from 'axios';
 
 class App extends Component {
 
-  state = {
-    videos: videoData,
-    mainObject: mainObject
+  constructor(props){
+    super(props);
+    this.state = {
+      videos: [],
+      mainObject: {
+        comments: []
+      }
+    }
   }
 
   addComment = (e) => {
@@ -35,6 +41,7 @@ class App extends Component {
             <Route path="/" exact component={Main} />
             <Route path="/upload" component={Upload} />
           </Switch>
+          {/* <CommentList comments={this.state.comments} */}
         </div>
       </Router>
     );

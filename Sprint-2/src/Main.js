@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './main.scss';
 import CommentPosted from './CommentsData';
 import Aside from './Aside';
-import videoData from './VideoCardData';
-import mainObject from './ObjectData';
+// import videoData from './VideoCardData';
+// import mainObject from './ObjectData';
+import axios from 'axios';
 
 class Video extends Component {
 
@@ -63,14 +64,18 @@ class Description extends Component {
 
 class Comments extends Component {
 
-    render() {
+    state = {
+        videos: [],
+        mainObject: {
+            comments: []},
+    }
 
+    render() {
         const newComment = this.props.submit;
 
-        const comments = this.props.mainObject.comments;
+        const comments = this.state.mainObject.comments;
         let commentsJSX = [];
         for(let i = 0; i < comments.length; i++) {
-            
             commentsJSX.push(<CommentPosted name={comments[i].name}
                 timestamp={comments[i].timestamp}
                 comment={comments[i].comment} 
@@ -95,19 +100,49 @@ class Comments extends Component {
                 {commentsJSX}
              </div>
         )
-    }
+    
 }
-
-
+}
 
 class Main extends Component {
 
     state = {
-        videos: videoData,
-        mainObject: mainObject
-      }
+        videos: [],
+        mainObject: {
+            comments: []},
+    }
 
-    // {/* <Main submit={this.addComment} mainObject={this.state.mainObject} videos={this.state.videos}/> */}
+    // componentDidMount() {
+    //     axios.get('https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=roisinlocke')
+    //       .then(resp => {
+    //         this.setState({
+    //           comments: resp.data.comments
+    //         });
+    //         console.log(resp.data.comments)
+    //       });
+    //     }
+
+    
+    componentDidMount(){
+        axios.get('https://project-2-api.herokuapp.com/videos?api_key=roisinlocke')
+            .then(resp => {
+                this.setState( {
+                    videos: resp.data
+                })
+                console.log(resp.data)
+            })
+    }
+   
+
+    componentDidMount() {
+        axios.get('https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=roisinlocke')
+          .then(resp => {
+            this.setState({
+              mainObject: resp.data,
+            });
+            console.log(resp.data)
+          });
+        }
 
     render() {
         return (
@@ -118,7 +153,7 @@ class Main extends Component {
             <section className="parent">
                 <section className="main">
                     <Description mainObject={this.state.mainObject}/>
-                    <Comments submit= {this.state.submit} mainObject={this.state.mainObject}/> 
+                    <Comments comments={this.state.comments}/>
                 </section> 
                 <section className="videos">
                     <Aside videos={this.state.videos}/>

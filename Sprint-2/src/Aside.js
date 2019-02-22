@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './aside.scss';
 import VideoCard from './VideoCard';
+import axios from 'axios';
 
 class Aside extends Component {
+
     render() {
 
         const videos = this.props.videos;
