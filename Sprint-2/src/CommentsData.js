@@ -36,7 +36,7 @@ class CommentPosted extends Component {
 
         return(
             <article className="comments__posted">
-                    <img className="posted__img" src="Assets/Images/icons8-rick-sanchez.svg" alt="Profile Image"/>
+                    <img className="posted__img" src="assets/Icons/SVG/icons8-rick-sanchez.svg" alt="Profile Image"/>
                     <p className="posted__name">{this.props.name}</p>
                     <p className="posted__date">{date(ts)}</p>
                     <p className="posted__comment">{this.props.comment}</p>
@@ -45,7 +45,7 @@ class CommentPosted extends Component {
                         <div className="like__container">
                             <span className="like__counter">{this.state.count}</span>
                             <button className="like__button" onClick={this.likeHandler}>
-                                <img src="Assets/Icons/SVG/thumbs-up.svg" alt="thumbs up" className="like__thumb"/>
+                                <img src="assets/Icons/SVG/thumbs-up.svg" alt="thumbs up" className="like__thumb"/>
                             </button>
                         </div>                  
                     </div>

@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import './NavBar.scss';
+import {Link} from 'react-router-dom';
 
 class NavBar extends Component {
     render() {
         return (
             <nav>
                 <div className="nav__svg">
-                    <img className="nav__logo" src="Assets/Logo/Logo-brainflix.svg" alt="Brainflix Logo"/>
+                    <Link to="/">
+                        <img className="nav__logo" src="Assets/Logo/Logo-brainflix.svg" alt="Brainflix Logo"/>
+                    </Link>
                 </div>
                 <input className="nav__search" type="text" name="searchArea" placeholder="Search"></input>
-                <button className="nav__button"><img className="nav__img--upload" src="Assets/Icons/SVG/Icon-upload.svg"/><h3>UPLOAD</h3></button>
+                <Link to="/upload">
+                    <button className="nav__button"><img className="nav__img--upload" src="Assets/Icons/SVG/Icon-upload.svg"/><h3>UPLOAD</h3></button>
+                </Link>
                 <img className="nav__img--profile" src="Assets/Images/Mohan-muruge.jpg" alt="Profile Image"/>
             </nav>
         )

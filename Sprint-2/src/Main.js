@@ -15,7 +15,7 @@ class Video extends Component {
     render() {
         return (
             <div className="video">
-                <video ref="videoRef" poster="Assets/Images/video-list-0.jpg" className="main__video" src="Assets/Video/BrainStation Sample Video.mp4" type="mp4">
+                <video ref="videoRef" poster={this.props.mainObject.image} className="main__video" src="Assets/Video/BrainStation Sample Video.mp4" type="mp4">
                 </video>
                 <div className="video__controls">
                     <div className="video__playPauseButton"></div>
@@ -45,11 +45,11 @@ class Description extends Component {
                     <p className="main__date">12/18/2018</p>
                     <div className="main__icons">
                         <div>
-                            <img src="Assets/Icons/SVG/Icon-views.svg" />
+                            <img src="assets/Icons/SVG/Icon-views.svg" />
                             <span className="main__views">{mainObject.views}</span>
                         </div>
                         <div>
-                            <img src="Assets/Icons/SVG/Icon-likes.svg" />
+                            <img src="assets/Icons/SVG/Icon-likes.svg" />
                             <span className="main__likes">{mainObject.likes}</span>
                         </div>
                     </div>
@@ -64,16 +64,11 @@ class Description extends Component {
 
 class Comments extends Component {
 
-    state = {
-        videos: [],
-        mainObject: {
-            comments: []},
-    }
-
     render() {
         const newComment = this.props.submit;
 
-        const comments = this.state.mainObject.comments;
+        const comments = this.props.comments;
+        console.log(comments)
         let commentsJSX = [];
         for(let i = 0; i < comments.length; i++) {
             commentsJSX.push(<CommentPosted name={comments[i].name}
@@ -109,54 +104,55 @@ class Main extends Component {
     state = {
         videos: [],
         mainObject: {
-            comments: []},
+            comments: []
+        }
     }
 
-    // componentDidMount() {
-    //     axios.get('https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=roisinlocke')
-    //       .then(resp => {
-    //         this.setState({
-    //           comments: resp.data.comments
-    //         });
-    //         console.log(resp.data.comments)
-    //       });
-    //     }
-
-    
-    componentDidMount(){
+    componentDidMount() {
         axios.get('https://project-2-api.herokuapp.com/videos?api_key=roisinlocke')
             .then(resp => {
                 this.setState( {
                     videos: resp.data
                 })
                 console.log(resp.data)
-            })
-    }
-   
+          });
 
-    componentDidMount() {
         axios.get('https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=roisinlocke')
           .then(resp => {
+              console.log(resp.data)
             this.setState({
               mainObject: resp.data,
             });
             console.log(resp.data)
-          });
+          });      
         }
 
+    componentDidUpdate() {
+        console.log(this.props.match.params)
+        axios.get(`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=roisinlocke`)
+            .then(resp => {
+                console.log(resp.data)
+                if (this.props.match.params.id !== this.state.mainObject.id){
+                    this.setState({
+                        mainObject: resp.data
+                    })
+            }
+        })
+    }
+        
     render() {
         return (
             <article>
                 <article className="videoStuff">
-                    <Video />
+                    <Video mainObject={this.state.mainObject}/>
                 </article>
             <section className="parent">
                 <section className="main">
                     <Description mainObject={this.state.mainObject}/>
-                    <Comments comments={this.state.comments}/>
+                    <Comments comments={this.state.mainObject.comments}/>
                 </section> 
                 <section className="videos">
-                    <Aside videos={this.state.videos}/>
+                    <Aside videos={this.state.videos} mainObject={this.state.mainObject}/>
                 </section>
             </section>
             </article>

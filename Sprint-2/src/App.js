@@ -10,15 +10,16 @@ import axios from 'axios';
 
 class App extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      videos: [],
-      mainObject: {
-        comments: []
-      }
-    }
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     videos: [],
+
+  //     mainObject: {
+  //       comments: []
+  //     }
+  //   }
+  // }
 
   addComment = (e) => {
     const newObject = { ...this.state.mainObject, 
@@ -34,14 +35,13 @@ class App extends Component {
   render() {
     return (
       <Router>
-        {/* <Main submit={this.addComment} mainObject={this.state.mainObject} videos={this.state.videos}/> */}
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/" exact component={Main} />
+            <Route path="/" exact render={(props) => {return <Main {...props} />}}/>
             <Route path="/upload" component={Upload} />
+            <Route path="/:id" component={Main} />
           </Switch>
-          {/* <CommentList comments={this.state.comments} */}
         </div>
       </Router>
     );
