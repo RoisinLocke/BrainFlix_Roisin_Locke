@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './main.scss';
 import CommentPosted from './CommentsData';
 import Aside from './Aside';
-// import videoData from './VideoCardData';
-// import mainObject from './ObjectData';
 import axios from 'axios';
 
 class Video extends Component {
@@ -19,14 +17,14 @@ class Video extends Component {
                 </video>
                 <div className="video__controls">
                     <div className="video__playPauseButton"></div>
-                    <button className="video__play" type="button" data-state="play" onClick={this.playHandler}><img className="video__play--svg" src="Assets/Icons/SVG/Icon-play.svg"/></button>
+                    <button className="video__play" type="button" data-state="play" onClick={this.playHandler}><img className="video__play--svg" src="Assets/Icons/SVG/Icon-play.svg" alt="Play Button"/></button>
                     {/* <button className="video__pause" type="button" data-state="pause" onClick={this.pauseHandler}><img className="video__pause--svg" src="Assets/Icons/SVG/Icon-pause.svg"/> </button> */}
                     <div className="video__progressContainer"></div>
                     <div className="video__progress"></div>
                     <span className="video__progressBar">0:00/0:42</span>
                     <div className="video__vol"></div>
-                    <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"/></button>
-                    <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg"/></button>
+                    <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"  alt="Fullscreen Button"/></button>
+                    <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg" alt="Volume Button"/></button>
                 </div>
             </div>
         )
@@ -45,11 +43,11 @@ class Description extends Component {
                     <p className="main__date">12/18/2018</p>
                     <div className="main__icons">
                         <div>
-                            <img src="assets/Icons/SVG/Icon-views.svg" />
+                            <img src="assets/Icons/SVG/Icon-views.svg"  alt="Views Icon"/>
                             <span className="main__views">{mainObject.views}</span>
                         </div>
                         <div>
-                            <img src="assets/Icons/SVG/Icon-likes.svg" />
+                            <img src="assets/Icons/SVG/Icon-likes.svg"  alt="Likes Icon"/>
                             <span className="main__likes">{mainObject.likes}</span>
                         </div>
                     </div>
@@ -68,7 +66,6 @@ class Comments extends Component {
         const newComment = this.props.submit;
 
         const comments = this.props.comments;
-        console.log(comments)
         let commentsJSX = [];
         for(let i = 0; i < comments.length; i++) {
             commentsJSX.push(<CommentPosted name={comments[i].name}
@@ -82,7 +79,7 @@ class Comments extends Component {
                 <h2 className="comments__title">3 Comments</h2>
                 <div className="comments__container">
                 <div className="comments__image">
-                    <img className="comments__img" src="./Assets/Images/Mohan-muruge.jpg" alt="Profile Image" />
+                    <img className="comments__img" src="./Assets/Images/Mohan-muruge.jpg" alt="User Profile" />
                 </div>
                 <div className="comments__section">
                     <form onSubmit={newComment} id="comment__form" >
@@ -111,30 +108,25 @@ class Main extends Component {
     componentDidMount() {
         axios.get('https://project-2-api.herokuapp.com/videos?api_key=roisinlocke')
             .then(resp => {
-                this.setState( {
+                this.setState({
                     videos: resp.data
                 })
-                console.log(resp.data)
           });
 
         axios.get('https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=roisinlocke')
           .then(resp => {
-              console.log(resp.data)
             this.setState({
               mainObject: resp.data,
             });
-            console.log(resp.data)
           });      
         }
 
     componentDidUpdate() {
-        console.log(this.props.match.params)
         axios.get(`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=roisinlocke`)
             .then(resp => {
-                console.log(resp.data)
                 if (this.props.match.params.id !== this.state.mainObject.id){
-                    this.setState({
-                        mainObject: resp.data
+                        this.setState({
+                            mainObject: resp.data
                     })
             }
         })

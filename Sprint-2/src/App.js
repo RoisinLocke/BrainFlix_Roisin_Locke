@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
 import './App.scss';
-import mainObject from './ObjectData';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from './NavBar';
 import Main from './Main';
-import videoData from './VideoCardData';
 import Upload from './Upload';
-import axios from 'axios';
 
 class App extends Component {
 
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     videos: [],
+  constructor(props){
+    super(props);
+    this.state = {
+      videos: [],
 
-  //     mainObject: {
-  //       comments: []
-  //     }
-  //   }
-  // }
+      mainObject: {
+        comments: []
+      }
+    }
+  }
 
   addComment = (e) => {
     const newObject = { ...this.state.mainObject, 

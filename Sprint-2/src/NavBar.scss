@@ -126,20 +126,21 @@ nav {
     }
 }
 
-// .nav__button:active, .nav__button:visited {
-//     text-decoration: none;
-// }
-
 .nav__img--upload {
-        margin-right: 5px;
+    position: relative;
+    top: 8px;
+    margin-right: 5px;
+
+        @media (min-width: $tablet) {
+            top: 10px;
+        }
 }
 
-h3 {
-    width: 45%;
-    margin: 0;
+.nav__button--text {
+    margin-top: 8px;
 
     @media (min-width: $tablet) {
-        width: 50%;
+        margin-top: 10px;
     }
 }
 

@@ -14,11 +14,11 @@ class NavBar extends Component {
                 <input className="nav__search" type="text" name="searchArea" placeholder="Search"></input>
                 <Link className="nav__link" to="/upload">
                     <button className="nav__button">
-                    <img className="nav__img--upload" src="Assets/Icons/SVG/Icon-upload.svg"/>
-                    <h3>UPLOAD</h3>
+                        <img className="nav__img--upload" src="Assets/Icons/SVG/Icon-upload.svg"  alt="Upload Button"/>
+                        <p className="nav__button--text">UPLOAD</p>
                     </button>
                 </Link>
-                <img className="nav__img--profile" src="Assets/Images/Mohan-muruge.jpg" alt="Profile Image"/>
+                <img className="nav__img--profile" src="Assets/Images/Mohan-muruge.jpg" alt="User Profile"/>
             </nav>
         )
     }

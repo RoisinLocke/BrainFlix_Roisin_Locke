@@ -9,9 +9,8 @@ class CommentPosted extends Component {
 
     render() {
         this.likeHandler = () => {
-            console.log("You liked me!!")
             this.setState({
-               count: this.state.count += 1
+               count: this.state.count + 1
 
             })
         }
@@ -22,7 +21,6 @@ class CommentPosted extends Component {
             let day = todaysDate.getDate();
             let month = todaysDate.getMonth() +1;
             let year = todaysDate.getFullYear();
-            console.log(day, month, year);
             
             if (day < 10) {
                 day = '0' + day;
@@ -36,7 +34,7 @@ class CommentPosted extends Component {
 
         return(
             <article className="comments__posted">
-                    <img className="posted__img" src="assets/Icons/SVG/icons8-rick-sanchez.svg" alt="Profile Image"/>
+                    <img className="posted__img" src="assets/Icons/SVG/icons8-rick-sanchez.svg" alt="User profile"/>
                     <p className="posted__name">{this.props.name}</p>
                     <p className="posted__date">{date(ts)}</p>
                     <p className="posted__comment">{this.props.comment}</p>
