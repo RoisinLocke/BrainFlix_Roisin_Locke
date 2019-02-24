@@ -70,7 +70,7 @@ nav {
     }
 
     @media (min-width: $desktop) {
-        margin-right: 509px;
+        margin-right: 505px;
     }
 }
 
@@ -126,6 +126,10 @@ nav {
     }
 }
 
+// .nav__button:active, .nav__button:visited {
+//     text-decoration: none;
+// }
+
 .nav__img--upload {
         margin-right: 5px;
 }
@@ -137,6 +141,10 @@ h3 {
     @media (min-width: $tablet) {
         width: 50%;
     }
+}
+
+.nav__link {
+    text-decoration: none;
 }
 
 .nav__img--profile {
