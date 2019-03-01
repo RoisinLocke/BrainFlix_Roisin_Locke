@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default class Upload extends Component {
 
-  uploadHandler(e) {
+  uploadHandler = (e) => {
     // console.log(e.target.title.value);
     e.preventDefault();
     console.log("Boo!")
@@ -31,6 +31,9 @@ export default class Upload extends Component {
           console.log(resp))
       .catch((err) =>
           console.log(err))
+          
+      // this.props.history.push("/")
+
 
     e.target.reset();
     }

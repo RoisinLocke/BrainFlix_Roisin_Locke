@@ -25,6 +25,8 @@ class Main extends Component {
                 })
           });
 
+          
+
         axios.get('http://localhost:8080/videos/1af0jruup5gu')
           .then(resp => {
               this.setState({
@@ -32,6 +34,7 @@ class Main extends Component {
                 });
           });      
         }
+
 
     componentDidUpdate() {
         console.log(this.props)
