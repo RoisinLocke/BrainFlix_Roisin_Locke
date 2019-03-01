@@ -1,0 +1,84 @@
+/*Variables*/
+
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1440px;
+
+$fontprimary: #323232;
+$fontsecondary: #FAFAFA;
+$fontshadow: #E1E1E1;
+$navbackground: #323232;
+$gallerybackground: #FAFAFA;
+$darkgrey: #AFAFAF;
+$lightblue: #0095FF;
+$darkblue: #004892;
+
+// Mixins
+
+@mixin hero {
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (min-width: 600px) {
+        font-size: 60px;
+        line-height: 68px;  
+    }
+}
+
+@mixin h1 {
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (min-width: $tablet) {
+        font-size: 36px;
+        line-height: 44px; 
+    }    
+}
+
+@mixin h2 {
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (max-width: $mobile) {
+        font-size: 14px;
+        line-height: 22px; 
+    }
+}
+
+@mixin h3 {
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (max-width: $mobile) {
+        font-size: 13px;
+        line-height: 18px; 
+    }
+}
+
+@mixin p {
+    font-size: 14px;
+    line-height: 22px;
+
+    @media (max-width: $mobile) {
+        font-size: 13px;
+        line-height: 18px; 
+    }
+}
+
+@mixin contact-list {
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (max-width: $mobile) {
+        font-size: 13px;
+        line-height: 18px; 
+    }
+}
+
+@mixin navHover {
+    border-bottom: solid thick $lightblue;
+}
+
+@mixin margin10 {
+    margin: 0 10%;
+}

@@ -1,0 +1,213 @@
+@import './variables.scss';
+
+.upload {
+    margin: 0 16px;
+
+    @media (min-width: 375px) {
+        margin: 0 5%;
+    }
+
+    @media (min-width: 510px) {
+        margin: 0 10%;
+    }
+
+    @media (min-width: $tablet) {
+        margin: 0 24px;
+    }
+
+    @media (min-width: 820px) {
+        margin: 0 5%
+    }
+
+    @media (min-width: 920px) {
+        margin: 0 10%
+    }
+
+    @media (min-width: $desktop) {
+        margin: 0 180px;
+    }
+}
+
+.upload__title {
+    @include h1;
+    border-top: solid 1px $fontshadow;
+    padding-top: 24px;
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    @media (min-width: $tablet) {
+        padding-top: 48px;
+        padding-bottom: 32px;
+        margin: 0;
+        border-bottom: solid 1px $darkgrey;
+    }
+
+    @media (min-width: $desktop) {
+        border-bottom: solid 1px $fontshadow;
+    }
+}
+
+.upload__main {
+    @media (min-width: $desktop) {
+        display: flex;
+    }
+}
+
+.upload__image {
+    height: 153px;
+    width: 288px;
+    border-radius: 4px;
+    margin: 0;
+
+    @media (min-width: $tablet) {
+        height: 183px;
+        width: 344px;
+    }
+}
+
+.upload__form {
+    margin: 32px 0;
+
+    @media (min-width: $tablet) {
+        margin: 40px 0;
+    }
+
+    @media (min-width: $desktop) {
+        margin-left: 24px;
+    }
+}
+
+.upload__thumb, .form__title, .form__description {
+    color: $darkgrey;
+    font-weight: bold;
+    margin: 0;
+
+    @media (min-width: $tablet) {
+        margin-top: 32px;
+    }
+
+    @media (min-width: $desktop) {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+}
+
+.form__description {
+    @media (min-width: $tablet) {
+        margin-top: 0;
+    }
+}
+
+.upload__thumb{
+    @media (min-width: $tablet) {
+        margin-top: 40px;
+    }
+}
+
+.form__box--description, .form__box--title {
+    height: 143px;
+    width: 266px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: $darkgrey;
+    box-shadow: none;
+    background-color: $gallerybackground;
+    padding: 10px;
+    resize: none;
+
+    @media (min-width: 321px) {
+        width: 80%;
+    }
+
+    @media (min-width: $tablet) {
+        height: 143px;
+        width: 686px;
+        padding: 16px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 690px;
+    } 
+}
+
+.form__box--title {
+    height: 20px;
+    margin-bottom: 24px;
+
+    @media (min-width: $tablet) {
+        height: 20px;
+    }
+
+    @media (min-width: $desktop) {
+        padding: 7px 10px;
+    }
+}
+
+.form__box--description {
+    @media (min-width: $tablet) {
+        margin-bottom: 40px;
+    }
+
+    @media (min-width: $desktop) {
+        height: 60px;
+        margin-bottom: 0;
+        width: 678px;
+    }
+}
+
+.comment__box:active {
+    border: solid thick $lightblue;
+}
+
+.form__buttons{
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+
+    @media (min-width: $tablet) {
+        padding-top: 40px;
+        border-top: solid 1px $fontshadow;
+        flex-direction: row-reverse
+    }
+
+    @media (min-width: $desktop) {
+        border-top: solid 1px $darkgrey;
+    }
+}
+
+#publishButton {
+    height: 48px;
+    width: 288px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    border: none;
+    background-color: $lightblue;
+    border-radius: 4px;
+
+    @media (min-width: $tablet) {
+        width: 160px;
+        margin-left: 24px;
+        padding: 0;
+    }
+}
+
+#cancelButton {
+    width: 288px;
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: $lightblue;
+    border: none;
+    background-color: white;
+    border-radius: 4px;
+
+    @media (min-width: $tablet) {
+        width: 50px;
+        margin: 0 24px;
+    }
+}

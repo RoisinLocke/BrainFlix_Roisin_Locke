@@ -158,26 +158,14 @@
     display: none;
 }
 
-// .video__pause {
-//     position: absolute;
-//     height: 30px;
-//     width: 55px;
-//     border-radius: 4px;
-//     border: none;
-//     background: none;
-//     display: none;
-// }
+.video__pause--svg {
+    height: 20px;
+    position: absolute;
+    left: 22px;
+    top: 5px;
+    // display: none;
+}
 
-// .video__pause--svg {
-//     height: 20px;
-//     position: absolute;
-//     left: 22px;
-//     top: 5px;
-//     display: none;
-// }
-// .video__pause--svg:active {
-//     display: none;
-// }
 
 .video__progressContainer  {
     width: 134px;
