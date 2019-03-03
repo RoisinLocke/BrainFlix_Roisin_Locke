@@ -154,20 +154,6 @@
     top: 5px;
 }
 
-// .video__play--svg:active {
-//     display: none;
-// }
-
-// .video__pause {
-//     position: absolute;
-//     height: 30px;
-//     width: 55px;
-//     border-radius: 4px;
-//     border: none;
-//     background: none;
-    
-// }
-
 .video__pause--svg {
     height: 20px;
     position: absolute;
@@ -224,7 +210,6 @@
     }
 }
 
-
 .video__vol{
     width: 71px;
     padding-left: 12px;
@@ -240,29 +225,29 @@
 
 .video__fullscreen {
     position: absolute;
-    left: 214px;
-    top: 4px;
+    left: 220px;
+    top: 6px;
 
     @media (min-width: $tablet) {
-        left: 610px;
+        left: 620px;
     }
 
     @media (min-width: $desktop) {
-        left: 845px;
+        left: 852px;
     }
 }
 
 .video__volume {
     position: absolute;
-    left: 248px;
-    top: 4px;
+    left: 255px;
+    top: 6px;
 
     @media (min-width: $tablet) {
-        left: 645px;
+        left: 653px;
     }
 
     @media (min-width: $desktop) {
-        left: 875px;
+        left: 882px;
     }
 }
 

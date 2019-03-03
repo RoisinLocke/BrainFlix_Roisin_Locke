@@ -31,9 +31,6 @@ export default class Upload extends Component {
       .catch((err) =>
           console.log(err))
           
-      // this.props.history.push("/")
-
-
     e.target.reset();
     }
 
@@ -53,11 +50,12 @@ export default class Upload extends Component {
               <p className="form__description">ADD A VIDEO DESCRIPTION</p>
               <textarea className="form__box--description" type="text" name="description" id="descriptionInput" 
                 placeholder="Add a description of your video"></textarea>
-                <div className="form__buttons">
+              <div className="form__buttons">
                   <button type="submit" id="publishButton" value="PUBLISH">PUBLISH</button>
                   <button type="submit" id="cancelButton" value="CANCEL">CANCEL</button>
-                </div> 
+              </div> 
             </form>
+            
           </section>
           
         </main> 

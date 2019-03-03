@@ -36,7 +36,6 @@ class Main extends Component {
 
 
     componentDidUpdate() {
-        console.log(this.props)
         if (this.props.match.params.id !== this.state.mainObject.id) {
             axios.get(`http://localhost:8080/videos/${this.props.match.params.id}`)
                 .then(resp => {

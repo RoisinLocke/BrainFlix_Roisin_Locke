@@ -101,11 +101,6 @@ app.post('/upload', (req, res)=>{
     res.json(newVid);
 })
 
-app.post('/videos/:videoId', (req, res)=>{
-    console.log(req.body);
-    const newComment = req.body;
-    res.json(req.body);})
-
 app.listen(PORT, ()=>{
     console.log(`server listening on port ${PORT}`);
 })

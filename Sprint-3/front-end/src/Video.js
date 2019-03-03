@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import './styles/main.scss';
 
@@ -33,8 +32,8 @@ export default class Video extends Component {
                     <div className="video__progress"></div>
                     <span className="video__progressBar">0:00/0:42</span>
                     <div className="video__vol"></div>
-                    <button className="video__fullscreen" type="button" data-state="go-fullscreen"><img src="Assets/Icons/SVG/Icon-fullscreen.svg"  alt="Fullscreen Button"/></button>
-                    <button className="video__volume" type="button" data-state="vol"><img src="Assets/Icons/SVG/Icon-volume.svg" alt="Volume Button"/></button>
+                    <img className="video__fullscreen" src="assets/Icons/SVG/Icon-fullscreen.svg"  alt="Fullscreen Button"/>
+                    <img className="video__volume" src="Assets/Icons/SVG/Icon-volume.svg" alt="Volume Button"/>
                 </div>
             </div>
         )
