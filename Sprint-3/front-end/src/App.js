@@ -18,17 +18,6 @@ class App extends Component {
     }
   }
 
-  addComment = (e) => {
-    const newObject = { ...this.state.mainObject, 
-      comments: [...this.state.mainObject.comments, {name: "Paulo Ribeiro", timestamp: Date.now(), comment: e.target.addComment.value} ]};
-
-    this.setState({
-      mainObject: newObject
-    })
-    console.log(newObject);
-    e.preventDefault();
-  }
-
   render() {
     return (
       <Router>

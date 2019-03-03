@@ -5,7 +5,6 @@ import axios from 'axios';
 export default class Upload extends Component {
 
   uploadHandler = (e) => {
-    // console.log(e.target.title.value);
     e.preventDefault();
     console.log("Boo!")
     let postUrl = "http://localhost:8080/upload"

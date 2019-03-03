@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './styles/main.scss';
-import CommentPosted from './CommentsData';
 import Aside from './Aside';
 import axios from 'axios';
 import Comments from './Comments';

@@ -34,14 +34,14 @@ app.get('/videos/:videoId', (req, res)=>{
     res.json(match)
 });
 
-app.put('/videos/:videoId', (req, res)=>{
-    const targetVidId = (req.params.videoId);
-    let match = mainObj.find((video)=>{
-        return targetVidId === video.id
-    })
-    let newComment = match.commen
-    })
-    res.json(newcomment)
+// app.put('/videos/:videoId', (req, res)=>{
+//     const targetVidId = (req.params.videoId);
+//     let match = mainObj.find((video)=>{
+//         return targetVidId === video.id
+//     })
+//     let newComment = match.commen
+//     })
+//     res.json(newcomment)
 
 
 //this is used for POST reqs of new uploads
@@ -100,6 +100,11 @@ app.post('/upload', (req, res)=>{
     mainObj.push(newObj);
     res.json(newVid);
 })
+
+app.post('/videos/:videoId', (req, res)=>{
+    console.log(req.body);
+    const newComment = req.body;
+    res.json(req.body);})
 
 app.listen(PORT, ()=>{
     console.log(`server listening on port ${PORT}`);

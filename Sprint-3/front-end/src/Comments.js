@@ -1,27 +1,48 @@
 import React, { Component } from 'react';
 import './styles/main.scss';
 import CommentPosted from './CommentsData';
+import axios from 'axios';
+
 export default class Comments extends Component {
 
+    state = {
+        videos: [],
+        mainObject: {
+            comments: []
+        }
+    }
+
+
     render() {
-        const newComment = this.props.submit;
+
+        const config = {
+            method: "POST",
+            url: `https://local8080/videos/${this.props.match.params.id}`,
+            data: this.props.submit,
+            headers: {
+                'content-type': 'application/json'
+            }}
+        
+        axios(config)
+        .then((resp) =>
+            console.log(resp))
+        .catch((err) =>
+            console.log(err))
 
         const comments = this.props.comments;
 
-        // const putUrl = `https://local8080/videos/${videoId}`
+        
 
-        // let config = {
-        //     method: "PUT",
-        //     url: putUrl,
-        //     headers: {
-        //       'content-type': 'application/json'
-        //     }};
-
-        // axios(config)
-        //     .then((resp) =>
-        //         console.log(resp))
-        //     .catch((err) =>
-        //         console.log(err))
+        // addComment = (e) => {
+        //     const newObject = { ...this.state.mainObject, 
+        //       comments: [...this.state.mainObject.comments, {name: "Paulo Ribeiro", timestamp: Date.now(), comment: e.target.addComment.value} ]};
+        
+        //     this.setState({
+        //       mainObject: newObject
+        //     })
+        //     console.log(newObject);
+        //     e.preventDefault();
+        //   }
 
         let commentsJSX = [];
         for(let i = 0; i < comments.length; i++) {
